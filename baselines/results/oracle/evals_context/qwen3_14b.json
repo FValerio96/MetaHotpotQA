@@ -1,0 +1,50 @@
+{
+  "model": "qwen3_14b_oracle_kg",
+  "n_evaluated": 1808,
+  "n_missing_predictions": 0,
+  "global": {
+    "em": 83.0,
+    "f1": 87.2
+  },
+  "by_context_type": {
+    "oracle_full": {
+      "em": 85.8,
+      "f1": 90.6,
+      "n": 1141
+    },
+    "oracle_partial": {
+      "em": 78.3,
+      "f1": 81.3,
+      "n": 667
+    }
+  },
+  "by_difficulty": {
+    "entity_selection": {
+      "em": 88.3,
+      "f1": 92.3,
+      "n": 1045
+    },
+    "property_comparison": {
+      "em": 64.3,
+      "f1": 67.2,
+      "n": 252
+    },
+    "traversal": {
+      "em": 81.4,
+      "f1": 86.6,
+      "n": 511
+    }
+  },
+  "by_reasoning_type": {
+    "bridge": {
+      "em": 86.1,
+      "f1": 90.4,
+      "n": 1556
+    },
+    "comparison": {
+      "em": 64.3,
+      "f1": 67.2,
+      "n": 252
+    }
+  }
+}

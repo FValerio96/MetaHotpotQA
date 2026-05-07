@@ -1,0 +1,105 @@
+{
+  "n_evaluated": 1808,
+  "n_missing_predictions": 0,
+  "global": {
+    "em": 31.0,
+    "f1": 37.6,
+    "h1": null
+  },
+  "by_difficulty": {
+    "entity_selection": {
+      "em": 30.3,
+      "f1": 36.0,
+      "h1": null,
+      "n": 1045
+    },
+    "property_comparison": {
+      "em": 48.4,
+      "f1": 61.6,
+      "h1": null,
+      "n": 252
+    },
+    "traversal": {
+      "em": 23.9,
+      "f1": 29.0,
+      "h1": null,
+      "n": 511
+    }
+  },
+  "by_reasoning_type": {
+    "bridge": {
+      "em": 28.2,
+      "f1": 33.7,
+      "h1": null,
+      "n": 1556
+    },
+    "comparison": {
+      "em": 48.4,
+      "f1": 61.6,
+      "h1": null,
+      "n": 252
+    }
+  },
+  "by_ontology": {
+    "ont_10_culture": {
+      "em": 35.5,
+      "f1": 39.4,
+      "h1": null,
+      "n": 31
+    },
+    "ont_1_movie": {
+      "em": 27.8,
+      "f1": 34.1,
+      "h1": null,
+      "n": 1100
+    },
+    "ont_2_music": {
+      "em": 31.6,
+      "f1": 36.8,
+      "h1": null,
+      "n": 234
+    },
+    "ont_3_sport": {
+      "em": 31.6,
+      "f1": 40.3,
+      "h1": null,
+      "n": 95
+    },
+    "ont_4_book": {
+      "em": 28.0,
+      "f1": 34.4,
+      "h1": null,
+      "n": 1140
+    },
+    "ont_5_military": {
+      "em": 34.7,
+      "f1": 43.5,
+      "h1": null,
+      "n": 75
+    },
+    "ont_6_computer": {
+      "em": 25.0,
+      "f1": 33.3,
+      "h1": null,
+      "n": 8
+    },
+    "ont_7_space": {
+      "em": 15.8,
+      "f1": 21.9,
+      "h1": null,
+      "n": 19
+    },
+    "ont_8_politics": {
+      "em": 34.9,
+      "f1": 43.6,
+      "h1": null,
+      "n": 83
+    },
+    "ont_9_nature": {
+      "em": 46.6,
+      "f1": 52.3,
+      "h1": null,
+      "n": 178
+    }
+  }
+}

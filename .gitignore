@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+demo/_workspace/
+demo/_persistent_cache/
+*.pkl
+*.log
+
+# Large dataset files — distributed via Zenodo, not tracked in git
+subgraph_dataset/
+subgraphs_dataset.tar.gz
+utils/wikidata_labels_cache.json

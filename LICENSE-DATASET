@@ -1,0 +1,34 @@
+MetaHotpotQA Dataset License
+============================
+
+The MetaHotpotQA dataset (the "Dataset") — comprising the JSONL split files
+under `published_splits/` and the per-question Wikidata subgraphs distributed
+through the Zenodo deposit — is licensed under the
+**Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
+
+The full text of the license is available at:
+    https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Summary (not a substitute for the full license):
+- You are free to share and adapt the Dataset for any purpose, including
+  commercial use.
+- You must give appropriate credit, provide a link to the license, and
+  indicate if changes were made.
+- If you remix, transform, or build upon the Dataset, you must distribute
+  your contributions under the same license as the original.
+
+Attribution
+-----------
+When using MetaHotpotQA, please cite both the accompanying paper and the
+Zenodo deposit. See `CITATION.cff` and the README for the recommended
+citation strings.
+
+Upstream rights
+---------------
+- Questions and answers are derived from HotpotQA (Yang et al., 2018),
+  which is itself licensed under CC BY-SA 4.0. The share-alike clause of
+  this dataset inherits from that upstream license.
+- The 10 domain ontologies are reused from Text2KGBench
+  (Mihindukulasooriya et al., 2023), released under CC BY 4.0.
+- The Knowledge Graph content embedded in the per-question subgraphs is
+  derived from Wikidata, dedicated to the public domain under CC0 1.0.

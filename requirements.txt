@@ -1,0 +1,3 @@
+# MetaHotpotQA pipeline dependencies
+# All scripts use only the Python standard library plus:
+requests>=2.31.0

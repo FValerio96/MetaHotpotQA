@@ -1,0 +1,50 @@
+{
+  "model": "phi3_14b_oracle_kg",
+  "n_evaluated": 1808,
+  "n_missing_predictions": 0,
+  "global": {
+    "em": 75.0,
+    "f1": 80.9
+  },
+  "by_context_type": {
+    "oracle_full": {
+      "em": 80.8,
+      "f1": 86.3,
+      "n": 1141
+    },
+    "oracle_partial": {
+      "em": 65.1,
+      "f1": 71.6,
+      "n": 667
+    }
+  },
+  "by_difficulty": {
+    "entity_selection": {
+      "em": 83.3,
+      "f1": 88.8,
+      "n": 1045
+    },
+    "property_comparison": {
+      "em": 39.3,
+      "f1": 47.7,
+      "n": 252
+    },
+    "traversal": {
+      "em": 75.5,
+      "f1": 81.1,
+      "n": 511
+    }
+  },
+  "by_reasoning_type": {
+    "bridge": {
+      "em": 80.8,
+      "f1": 86.3,
+      "n": 1556
+    },
+    "comparison": {
+      "em": 39.3,
+      "f1": 47.7,
+      "n": 252
+    }
+  }
+}
