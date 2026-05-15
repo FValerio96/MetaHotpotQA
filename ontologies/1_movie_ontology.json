@@ -31,5 +31,42 @@
 		{"pid": "P921", "label": "main subject", "domain": "Q11424", "range": []},
 		{"pid": "P1411", "label": "nominated for", "domain": "Q11424", "range": ["Q618779", "Q4220917"]},
 		{"pid": "P2130", "label": "cost", "domain": "Q11424", "range": []}
+	],
+	"concepts_to_extend": [
+		{
+			"qid": "Q5",
+			"label": "human",
+			"follow_pids": ["P19", "P20", "P27", "P569", "P570", "P21", "P106"]
+		},
+		{
+			"qid": "Q618779",
+			"label": "award",
+			"follow_pids": ["P1027", "P585", "P1686"]
+		},
+		{
+			"qid": "Q4220917",
+			"label": "film award",
+			"follow_pids": ["P1027", "P585", "P1686"]
+		},
+		{
+			"qid": "Q1762059",
+			"label": "film production company",
+			"follow_pids": ["P17", "P571", "P159"]
+		},
+		{
+			"qid": "Q47461344",
+			"label": "written work",
+			"follow_pids": ["P50", "P577", "P495"]
+		},
+		{
+			"qid": "Q515",
+			"label": "city",
+			"follow_pids": ["P17", "P131"]
+		},
+		{
+			"qid": "Q6256",
+			"label": "country",
+			"follow_pids": ["P36", "P30", "P37"]
+		}
 	]
 }
