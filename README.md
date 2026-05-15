@@ -4,7 +4,7 @@
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
-[![Dataset: Zenodo](https://img.shields.io/badge/Dataset-Zenodo-3a4b9e.svg)](https://doi.org/10.5281/zenodo.20071935)
+[![Dataset: Zenodo](https://img.shields.io/badge/Dataset-Zenodo-3a4b9e.svg)](https://doi.org/10.5281/zenodo.20083549)
 [![Dataset: HuggingFace](https://img.shields.io/badge/Dataset-HuggingFace-yellow.svg)](TODO_HF_LINK)
 
 ---
@@ -14,11 +14,40 @@
 | Resource | Link |
 |---|---|
 | **Paper** (ISWC 2026 Resources Track) | TODO_PAPER_LINK |
-| **Dataset (canonical, with subgraphs)** | [10.5281/zenodo.20071935](https://doi.org/10.5281/zenodo.20071935) |
+| **Dataset (canonical, with subgraphs)** | [10.5281/zenodo.20083549](https://doi.org/10.5281/zenodo.20083549) |
 | **Dataset (splits only, easy load)** | TODO_HF_LINK |
 | **Code & pipeline** (this repo) | this repo |
 
 The dataset itself lives on **Zenodo** (canonical citation, includes the per-question Wikidata subgraphs, ~3 GB). The same splits are mirrored on **HuggingFace Hub** for use with `datasets.load_dataset`. This repository hosts the **construction pipeline** and the **evaluation code**.
+
+---
+
+## Reviewer Quick Check (~10 min, no GPU/Ollama needed)
+
+Two commands reproduce the core artifacts of the paper from a fresh clone:
+
+```bash
+git clone https://github.com/FValerio96/MetaHotpotQA.git
+cd MetaHotpotQA
+pip install -r requirements.txt
+
+# 1) Pipeline reproducibility — rebuild 3 random records end-to-end from
+#    HotpotQA + Wikidata and diff byte-for-byte against published_splits/.
+export WIKIDATA_CONTACT="your.email@example.com"
+python demo/run_pipeline_demo.py --contact-email "$WIKIDATA_CONTACT" --mode fast
+
+# 2) Reproduce the Qwen3 oracle numbers from Table 1 in a few seconds
+#    using the pre-computed predictions shipped under baselines/results/.
+python -m baselines.evaluate \
+    --predictions baselines/results/oracle/preds_qwen3_14b.jsonl \
+    --split published_splits/test.jsonl
+```
+
+Step 1 ends with `ALL OK — regenerated records match the published ground truth byte-for-byte on canonical fields`. Step 2 reproduces EM ≈ 83.0 / F1 ≈ 87.2 from Table 1, with no LLM inference involved.
+
+**If the demo fails or hangs** (typically a Wikidata maxlag / timeout interrupting an earlier run), remove `demo/_persistent_cache/node_cache.pkl` and re-run — otherwise the next attempt reuses the partial cache from the failed one and silently produces incomplete subgraphs.
+
+For a slower but more thorough variant that also exercises the LLM Tier-3 fuzzy matching in answer coverage, install [Ollama](https://ollama.ai), pull `qwen3:14b`, and add `--mode full`.
 
 ---
 
@@ -57,10 +86,10 @@ ds = load_dataset("TODO_HF_HANDLE/MetaHotpotQA")
 
 ```bash
 mkdir -p data && cd data
-wget https://zenodo.org/records/20071935/files/published_splits.zip
-wget https://zenodo.org/records/20071935/files/subgraphs_dataset.tar.gz
+wget https://zenodo.org/records/20083549/files/published_splits.zip
+wget https://zenodo.org/records/20083549/files/subgraph_dataset.tar.gz
 unzip published_splits.zip -d published_splits/
-tar -xzf subgraphs_dataset.tar.gz
+tar -xzf subgraph_dataset.tar.gz
 ```
 
 After extraction you should have:
@@ -182,17 +211,18 @@ If you use MetaHotpotQA, please cite the paper **and** the Zenodo deposit:
 ```bibtex
 @inproceedings{metahotpotqa2026,
   title     = {MetaHotpotQA: Shifting Schemaless KGQA into Domain-Aware Knowledge Graphs},
-  author    = {TODO},
+  author    = {Valerio, Flavio and Siciliani, Lucia and Ghizzota, Eleonora and Basile, Pierpaolo and Lops, Pasquale},
   booktitle = {Proceedings of the 25th International Semantic Web Conference (ISWC), Resources Track},
   year      = {2026}
 }
 
 @dataset{metahotpotqa_zenodo_2026,
-  title     = {MetaHotpotQA v1.0},
-  author    = {TODO},
+  title     = {MetaHotpotQA},
+  author    = {Valerio, Flavio and Siciliani, Lucia and Ghizzota, Eleonora and Basile, Pierpaolo and Lops, Pasquale},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.20071935}
+  version   = {1.0.1},
+  doi       = {10.5281/zenodo.20083549}
 }
 ```
 

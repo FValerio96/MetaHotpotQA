@@ -2,14 +2,25 @@ cff-version: 1.2.0
 message: "If you use MetaHotpotQA in your research, please cite both the paper and the Zenodo deposit."
 title: "MetaHotpotQA: Shifting Schemaless KGQA into Domain-Aware Knowledge Graphs"
 type: dataset
-version: "1.0.0"
-date-released: "2026-05-07"
+version: "1.0.1"
+date-released: "2026-05-08"
 license: CC-BY-SA-4.0
-doi: 10.5281/zenodo.20071935
-url: "https://doi.org/10.5281/zenodo.20071935"
+doi: 10.5281/zenodo.20083549
+url: "https://doi.org/10.5281/zenodo.20083549"
 authors:
-  - family-names: "TODO"
-    given-names: "TODO"
+  - family-names: "Valerio"
+    given-names: "Flavio"
+    orcid: "https://orcid.org/0009-0007-2991-0306"
+  - family-names: "Siciliani"
+    given-names: "Lucia"
+    orcid: "https://orcid.org/0000-0002-1438-280X"
+  - family-names: "Ghizzota"
+    given-names: "Eleonora"
+    orcid: "https://orcid.org/0000-0002-0751-3891"
+  - family-names: "Basile"
+    given-names: "Pierpaolo"
+  - family-names: "Lops"
+    given-names: "Pasquale"
 keywords:
   - knowledge graph question answering
   - KGQA
@@ -23,7 +34,18 @@ preferred-citation:
   title: "MetaHotpotQA: Shifting Schemaless KGQA into Domain-Aware Knowledge Graphs"
   year: 2026
   authors:
-    - family-names: "TODO"
-      given-names: "TODO"
+    - family-names: "Valerio"
+      given-names: "Flavio"
+      orcid: "https://orcid.org/0009-0007-2991-0306"
+    - family-names: "Siciliani"
+      given-names: "Lucia"
+      orcid: "https://orcid.org/0000-0002-1438-280X"
+    - family-names: "Ghizzota"
+      given-names: "Eleonora"
+      orcid: "https://orcid.org/0000-0002-0751-3891"
+    - family-names: "Basile"
+      given-names: "Pierpaolo"
+    - family-names: "Lops"
+      given-names: "Pasquale"
   conference:
     name: "The 25th International Semantic Web Conference (ISWC), Resources Track"
